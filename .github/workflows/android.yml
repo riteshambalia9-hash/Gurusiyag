@@ -23,7 +23,8 @@ jobs:
 
       - name: Build APK
         run: ./gradlew assembleDebug # Using the wrapper is more reliable
-
+      - name: Fix gradlew permission
+        run: chmod +x gradlew
       - name: Upload APK
         uses: actions/upload-artifact@v4 # FIXED: This was the source of your error
         with:
